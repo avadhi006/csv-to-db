@@ -7,10 +7,10 @@ import (
 	"os"
 	"time"
 
+	"github.com/avadhi006/csv-to-db/models"
 	"github.com/joho/godotenv"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
-	"github.com/avadhi006/csv-to-db/models"
 )
 
 func loadEnv() {
