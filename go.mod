@@ -1,4 +1,5 @@
-module dockerApplication
+//module dockerApplication
+module github.com/avadhi006/csv-to-db
 
 go 1.23.2
 
