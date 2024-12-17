@@ -1,11 +1,11 @@
 # Use Golang image
-FROM golang:1.20-alpine as builder
+FROM golang:1.23-alpine as builder
 
 WORKDIR /app
 
 # Copy the Go module files and download the dependencies
-COPY go.mod go.sum ./
-RUN go mod tidy
+#COPY go.mod go.sum ./
+#RUN go mod tidy
 
 # Copy the rest of the application code
 COPY . .

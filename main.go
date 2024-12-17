@@ -73,10 +73,11 @@ func parseCSV(filePath string) ([]models.Record, error) {
 
 		// Convert CSV row to Record struct
 		records = append(records, models.Record{
-			Name:     record[0],
-			Email:    record[1],
-			Phone:    record[2],
-			Location: record[3],
+			SiteID:                record[0],
+			FixletID:              record[1],
+			Name:                  record[2],
+			Crtiticality:          record[3],
+			RelevantComputerCount: record[4],
 		})
 	}
 	return records, nil

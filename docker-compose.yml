@@ -11,6 +11,8 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    networks:
+      - appnet  # Add the network to db service
 
   pgadmin:
     image: dpage/pgadmin4:latest
@@ -21,6 +23,8 @@ services:
       - "8081:80"
     depends_on:
       - db
+    networks:
+      - appnet  # Add the network to pgadmin service
 
   app:
     build: .
@@ -36,7 +40,7 @@ services:
       - .:/app
     command: ["./main"]
     networks:
-      - appnet
+      - appnet  # Ensure the app is connected to the correct network
 
 volumes:
   postgres_data:
